@@ -1,8 +1,9 @@
 #include <iostream>
 #include "gtest/gtest.h"
 
-#include "project1.h"
+#include "openre.hpp"
 
+using namespace openre;
 
 // IndependentMethod is a test case - here, we have 2 tests for this 1 test case
 TEST(IndependentMethod, ResetsToZero) {
@@ -21,17 +22,17 @@ TEST(IndependentMethod, ResetsToZero2) {
 	EXPECT_EQ(0, i);
 }
 
-// The fixture for testing class Project1. From google test primer.
-class Project1Test : public ::testing::Test {
+// The fixture for testing class OpenRE. From google test primer.
+class OpenRETest : public ::testing::Test {
 protected:
 	// You can remove any or all of the following functions if its body
 	// is empty.
 
-	Project1Test() {
+	OpenRETest() {
 		// You can do set-up work for each test here.
 	}
 
-	virtual ~Project1Test() {
+	virtual ~OpenRETest() {
 		// You can do clean-up work that doesn't throw exceptions here.
 	}
 
@@ -47,16 +48,16 @@ protected:
 		// before the destructor).
 	}
 
-	// Objects declared here can be used by all tests in the test case for Project1.
-	Project1 p;
+	// Objects declared here can be used by all tests in the test case for OpenRE.
+	OpenRE ore;
 };
 
 // Test case must be called the class above
 // Also note: use TEST_F instead of TEST to access the test fixture (from google test primer)
-TEST_F(Project1Test, MethodBarDoesAbc) {
+TEST_F(OpenRETest, MethodBarDoesAbc) {
 	int i = 0;
-	p.foo(i); // we have access to p, declared in the fixture
+	ore.foo(i); // we have access to p, declared in the fixture
 	EXPECT_EQ(1, i);
 }
 
-// }  // namespace - could surround Project1Test in a namespace
+// }  // namespace - could surround OpenRETest in a namespace
